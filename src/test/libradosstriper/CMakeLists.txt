@@ -12,6 +12,8 @@ set_target_properties(ceph_test_rados_striper_api_striping PROPERTIES COMPILE_FL
   ${UNITTEST_CXX_FLAGS})
 
 add_ceph_test(rados-striper.sh ${CMAKE_SOURCE_DIR}/src/test/libradosstriper/rados-striper.sh)
+set_property(TEST rados-striper.sh
+  PROPERTY LABELS Racing)
 
 add_executable(ceph_test_rados_striper_api_io
   io.cc)
